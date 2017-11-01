@@ -13,6 +13,12 @@ target 'StickerPocket' do
   pod 'Colours'
   pod 'FMDB'
   pod 'Mantle'
+  target 'MsgStickerPocket' do
+      pod 'Mantle'
+      pod 'FMDB'
+      pod 'SDWebImage'
+      pod 'Colours'
+  end
 
   target 'StickerPocketTests' do
     inherit! :search_paths

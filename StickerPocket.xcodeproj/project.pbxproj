@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		59BE0581E8D6449E8A389D91 /* libPods-StickerPocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6EF012236F503F5D78AC75F /* libPods-StickerPocket.a */; };
-		E70B8B8B900A7D0A481B1622 /* libPods-StickerPocketTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7957507CA4530603E2394EBA /* libPods-StickerPocketTests.a */; };
-		F156A697CB016F687A6C3371 /* libPods-StickerPocketUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A98185067225EF4C8FBB5CEE /* libPods-StickerPocketUITests.a */; };
+		51EFDE6EF36DAF5C387158C8 /* libPods-StickerPocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9F3F379FB56ABDEFC186B0 /* libPods-StickerPocket.a */; };
+		70F4F23C78EE21BA577F3BC9 /* libPods-StickerPocketTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB27678D09A15F7A5D6905A /* libPods-StickerPocketTests.a */; };
+		8AEBF8D9BA9E9BAAC7375000 /* libPods-StickerPocket-MsgStickerPocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A56535DF9CED8D68BDD80636 /* libPods-StickerPocket-MsgStickerPocket.a */; };
+		E47024D3121D05858BF77850 /* libPods-StickerPocketUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF56E04BAEBB79EEC2CD36FD /* libPods-StickerPocketUITests.a */; };
 		F8B853D91FA8723A00892862 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B853D81FA8723A00892862 /* AppDelegate.m */; };
 		F8B853DC1FA8723A00892862 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B853DB1FA8723A00892862 /* ViewController.m */; };
 		F8B853DF1FA8723A00892862 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B853DD1FA8723A00892862 /* Main.storyboard */; };
@@ -34,6 +35,18 @@
 		F8BEF28D1FA97CA900EF218E /* UIImage+HRAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2871FA97CA900EF218E /* UIImage+HRAddition.m */; };
 		F8BEF2931FA982E000EF218E /* HRStickerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2921FA982DF00EF218E /* HRStickerModel.m */; };
 		F8BEF2961FA99A0200EF218E /* HRStickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2951FA99A0200EF218E /* HRStickerCollectionViewCell.m */; };
+		F8BEF2B51FA9A37D00EF218E /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BEF29C1FA9A02000EF218E /* Messages.framework */; };
+		F8BEF2B91FA9A37D00EF218E /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2B81FA9A37D00EF218E /* MessagesViewController.m */; };
+		F8BEF2BC1FA9A37D00EF218E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8BEF2BA1FA9A37D00EF218E /* MainInterface.storyboard */; };
+		F8BEF2BE1FA9A37D00EF218E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8BEF2BD1FA9A37D00EF218E /* Assets.xcassets */; };
+		F8BEF2C21FA9A37D00EF218E /* MsgStickerPocket.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F8BEF2B41FA9A37D00EF218E /* MsgStickerPocket.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F8BEF3361FA9B2F400EF218E /* HRMsgStickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF3351FA9B2F400EF218E /* HRMsgStickerCollectionViewCell.m */; };
+		F8BEF33F1FA9B7D300EF218E /* HRStickerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2921FA982DF00EF218E /* HRStickerModel.m */; };
+		F8BEF3401FA9B7EB00EF218E /* FMDatabaseQueue+HRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF27E1FA97CA900EF218E /* FMDatabaseQueue+HRExtension.m */; };
+		F8BEF3411FA9B8C600EF218E /* SDImageCache+HRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF27D1FA97CA900EF218E /* SDImageCache+HRExtension.m */; };
+		F8BEF3421FA9B8DD00EF218E /* UIImage+HRAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2871FA97CA900EF218E /* UIImage+HRAddition.m */; };
+		F8BEF3431FA9B8E300EF218E /* NSData+HRAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2851FA97CA900EF218E /* NSData+HRAddition.m */; };
+		F8BEF3441FA9B98200EF218E /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2861FA97CA900EF218E /* UIView+MJExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +64,13 @@
 			remoteGlobalIDString = F8B853D31FA8723A00892862;
 			remoteInfo = StickerPocket;
 		};
+		F8BEF2C01FA9A37D00EF218E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8B853CC1FA8723A00892862 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8BEF2B31FA9A37D00EF218E;
+			remoteInfo = MsgStickerPocket;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +80,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				F8BEF2C21FA9A37D00EF218E /* MsgStickerPocket.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,15 +88,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		11DDB61EB0B6ACE750AD700D /* Pods-StickerPocket-MsgStickerPocket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickerPocket-MsgStickerPocket.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickerPocket-MsgStickerPocket/Pods-StickerPocket-MsgStickerPocket.debug.xcconfig"; sourceTree = "<group>"; };
 		14C33BD7489FE3C0266FAA45 /* Pods-StickerPocketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickerPocketTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickerPocketTests/Pods-StickerPocketTests.release.xcconfig"; sourceTree = "<group>"; };
+		16D71BB05A944D0D4FD173C7 /* Pods-MsgStickerPocket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MsgStickerPocket.release.xcconfig"; path = "Pods/Target Support Files/Pods-MsgStickerPocket/Pods-MsgStickerPocket.release.xcconfig"; sourceTree = "<group>"; };
 		1864563AF6A74CD6507DF73F /* Pods-StickerPocketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickerPocketUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickerPocketUITests/Pods-StickerPocketUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2363AE369065611C5B39484A /* Pods-StickerPocket-MsgStickerPocket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickerPocket-MsgStickerPocket.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickerPocket-MsgStickerPocket/Pods-StickerPocket-MsgStickerPocket.release.xcconfig"; sourceTree = "<group>"; };
 		4165857C7A3C7CE1A3B69FB0 /* Pods-StickerPocket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickerPocket.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickerPocket/Pods-StickerPocket.release.xcconfig"; sourceTree = "<group>"; };
 		5526F171100748FB54341203 /* Pods-StickerPocket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickerPocket.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickerPocket/Pods-StickerPocket.debug.xcconfig"; sourceTree = "<group>"; };
-		7957507CA4530603E2394EBA /* libPods-StickerPocketTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StickerPocketTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A98185067225EF4C8FBB5CEE /* libPods-StickerPocketUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StickerPocketUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		618544B4393228262A4E74AB /* Pods-MsgStickerPocket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MsgStickerPocket.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MsgStickerPocket/Pods-MsgStickerPocket.debug.xcconfig"; sourceTree = "<group>"; };
+		A56535DF9CED8D68BDD80636 /* libPods-StickerPocket-MsgStickerPocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StickerPocket-MsgStickerPocket.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BF80B42652C6C7082E4BCC /* Pods-StickerPocketUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickerPocketUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickerPocketUITests/Pods-StickerPocketUITests.release.xcconfig"; sourceTree = "<group>"; };
-		D6EF012236F503F5D78AC75F /* libPods-StickerPocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StickerPocket.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF56E04BAEBB79EEC2CD36FD /* libPods-StickerPocketUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StickerPocketUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBE1179240D6F6E50E12A461 /* Pods-StickerPocketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickerPocketTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickerPocketTests/Pods-StickerPocketTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DEB27678D09A15F7A5D6905A /* libPods-StickerPocketTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StickerPocketTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9F3F379FB56ABDEFC186B0 /* libPods-StickerPocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StickerPocket.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED28D572AB676E3696111988 /* libPods-MsgStickerPocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MsgStickerPocket.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B853D41FA8723A00892862 /* StickerPocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickerPocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B853D71FA8723A00892862 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F8B853D81FA8723A00892862 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -130,6 +157,15 @@
 		F8BEF2941FA99A0200EF218E /* HRStickerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRStickerCollectionViewCell.h; sourceTree = "<group>"; };
 		F8BEF2951FA99A0200EF218E /* HRStickerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRStickerCollectionViewCell.m; sourceTree = "<group>"; };
 		F8BEF29C1FA9A02000EF218E /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		F8BEF2B41FA9A37D00EF218E /* MsgStickerPocket.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MsgStickerPocket.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8BEF2B71FA9A37D00EF218E /* MessagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
+		F8BEF2B81FA9A37D00EF218E /* MessagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
+		F8BEF2BB1FA9A37D00EF218E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		F8BEF2BD1FA9A37D00EF218E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8BEF2BF1FA9A37D00EF218E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8BEF3331FA9B23000EF218E /* MsgStickerPocket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MsgStickerPocket.entitlements; sourceTree = "<group>"; };
+		F8BEF3341FA9B2F400EF218E /* HRMsgStickerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRMsgStickerCollectionViewCell.h; sourceTree = "<group>"; };
+		F8BEF3351FA9B2F400EF218E /* HRMsgStickerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRMsgStickerCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59BE0581E8D6449E8A389D91 /* libPods-StickerPocket.a in Frameworks */,
+				51EFDE6EF36DAF5C387158C8 /* libPods-StickerPocket.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E70B8B8B900A7D0A481B1622 /* libPods-StickerPocketTests.a in Frameworks */,
+				70F4F23C78EE21BA577F3BC9 /* libPods-StickerPocketTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +189,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F156A697CB016F687A6C3371 /* libPods-StickerPocketUITests.a in Frameworks */,
+				E47024D3121D05858BF77850 /* libPods-StickerPocketUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8BEF2B11FA9A37D00EF218E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8BEF2B51FA9A37D00EF218E /* Messages.framework in Frameworks */,
+				8AEBF8D9BA9E9BAAC7375000 /* libPods-StickerPocket-MsgStickerPocket.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +214,10 @@
 				14C33BD7489FE3C0266FAA45 /* Pods-StickerPocketTests.release.xcconfig */,
 				1864563AF6A74CD6507DF73F /* Pods-StickerPocketUITests.debug.xcconfig */,
 				A9BF80B42652C6C7082E4BCC /* Pods-StickerPocketUITests.release.xcconfig */,
+				618544B4393228262A4E74AB /* Pods-MsgStickerPocket.debug.xcconfig */,
+				16D71BB05A944D0D4FD173C7 /* Pods-MsgStickerPocket.release.xcconfig */,
+				11DDB61EB0B6ACE750AD700D /* Pods-StickerPocket-MsgStickerPocket.debug.xcconfig */,
+				2363AE369065611C5B39484A /* Pods-StickerPocket-MsgStickerPocket.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -176,10 +225,12 @@
 		B7F1B187C7CD76C5C0E63F19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D6EF012236F503F5D78AC75F /* libPods-StickerPocket.a */,
-				7957507CA4530603E2394EBA /* libPods-StickerPocketTests.a */,
-				A98185067225EF4C8FBB5CEE /* libPods-StickerPocketUITests.a */,
 				F8BEF29C1FA9A02000EF218E /* Messages.framework */,
+				ED28D572AB676E3696111988 /* libPods-MsgStickerPocket.a */,
+				EC9F3F379FB56ABDEFC186B0 /* libPods-StickerPocket.a */,
+				DEB27678D09A15F7A5D6905A /* libPods-StickerPocketTests.a */,
+				BF56E04BAEBB79EEC2CD36FD /* libPods-StickerPocketUITests.a */,
+				A56535DF9CED8D68BDD80636 /* libPods-StickerPocket-MsgStickerPocket.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -190,6 +241,7 @@
 				F8B853D61FA8723A00892862 /* StickerPocket */,
 				F8B853EF1FA8723B00892862 /* StickerPocketTests */,
 				F8B853FA1FA8723B00892862 /* StickerPocketUITests */,
+				F8BEF2B61FA9A37D00EF218E /* MsgStickerPocket */,
 				F8B853D51FA8723A00892862 /* Products */,
 				913897CBCB5D07F62EE7959E /* Pods */,
 				B7F1B187C7CD76C5C0E63F19 /* Frameworks */,
@@ -202,6 +254,7 @@
 				F8B853D41FA8723A00892862 /* StickerPocket.app */,
 				F8B853EC1FA8723B00892862 /* StickerPocketTests.xctest */,
 				F8B853F71FA8723B00892862 /* StickerPocketUITests.xctest */,
+				F8BEF2B41FA9A37D00EF218E /* MsgStickerPocket.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,6 +343,21 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		F8BEF2B61FA9A37D00EF218E /* MsgStickerPocket */ = {
+			isa = PBXGroup;
+			children = (
+				F8BEF3331FA9B23000EF218E /* MsgStickerPocket.entitlements */,
+				F8BEF2B71FA9A37D00EF218E /* MessagesViewController.h */,
+				F8BEF2B81FA9A37D00EF218E /* MessagesViewController.m */,
+				F8BEF2BA1FA9A37D00EF218E /* MainInterface.storyboard */,
+				F8BEF2BD1FA9A37D00EF218E /* Assets.xcassets */,
+				F8BEF2BF1FA9A37D00EF218E /* Info.plist */,
+				F8BEF3341FA9B2F400EF218E /* HRMsgStickerCollectionViewCell.h */,
+				F8BEF3351FA9B2F400EF218E /* HRMsgStickerCollectionViewCell.m */,
+			);
+			path = MsgStickerPocket;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -308,6 +376,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F8BEF2C11FA9A37D00EF218E /* PBXTargetDependency */,
 			);
 			name = StickerPocket;
 			productName = StickerPocket;
@@ -356,6 +425,25 @@
 			productReference = F8B853F71FA8723B00892862 /* StickerPocketUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F8BEF2B31FA9A37D00EF218E /* MsgStickerPocket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8BEF2C31FA9A37D00EF218E /* Build configuration list for PBXNativeTarget "MsgStickerPocket" */;
+			buildPhases = (
+				FC1F0B6CE07C201B7C43E90B /* [CP] Check Pods Manifest.lock */,
+				F8BEF2B01FA9A37D00EF218E /* Sources */,
+				F8BEF2B11FA9A37D00EF218E /* Frameworks */,
+				F8BEF2B21FA9A37D00EF218E /* Resources */,
+				90F20F20179871B23F3741D5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MsgStickerPocket;
+			productName = MsgStickerPocket;
+			productReference = F8BEF2B41FA9A37D00EF218E /* MsgStickerPocket.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -388,6 +476,15 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = F8B853D31FA8723A00892862;
 					};
+					F8BEF2B31FA9A37D00EF218E = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = F8B853CF1FA8723A00892862 /* Build configuration list for PBXProject "StickerPocket" */;
@@ -405,6 +502,7 @@
 			projectRoot = "";
 			targets = (
 				F8B853D31FA8723A00892862 /* StickerPocket */,
+				F8BEF2B31FA9A37D00EF218E /* MsgStickerPocket */,
 				F8B853EB1FA8723B00892862 /* StickerPocketTests */,
 				F8B853F61FA8723B00892862 /* StickerPocketUITests */,
 			);
@@ -439,6 +537,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8BEF2B21FA9A37D00EF218E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8BEF2BE1FA9A37D00EF218E /* Assets.xcassets in Resources */,
+				F8BEF2BC1FA9A37D00EF218E /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -463,9 +570,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-StickerPocket/Pods-StickerPocket-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Colours/Colours.framework",
+				"${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Colours.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DACircularProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -535,6 +655,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StickerPocketUITests/Pods-StickerPocketUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		90F20F20179871B23F3741D5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StickerPocket-MsgStickerPocket/Pods-StickerPocket-MsgStickerPocket-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A6CCA395965D3D2D256F1F7A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -586,6 +721,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FC1F0B6CE07C201B7C43E90B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StickerPocket-MsgStickerPocket-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -628,6 +781,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8BEF2B01FA9A37D00EF218E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8BEF3421FA9B8DD00EF218E /* UIImage+HRAddition.m in Sources */,
+				F8BEF3361FA9B2F400EF218E /* HRMsgStickerCollectionViewCell.m in Sources */,
+				F8BEF3431FA9B8E300EF218E /* NSData+HRAddition.m in Sources */,
+				F8BEF2B91FA9A37D00EF218E /* MessagesViewController.m in Sources */,
+				F8BEF3411FA9B8C600EF218E /* SDImageCache+HRExtension.m in Sources */,
+				F8BEF33F1FA9B7D300EF218E /* HRStickerModel.m in Sources */,
+				F8BEF3401FA9B7EB00EF218E /* FMDatabaseQueue+HRExtension.m in Sources */,
+				F8BEF3441FA9B98200EF218E /* UIView+MJExtension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -640,6 +808,11 @@
 			isa = PBXTargetDependency;
 			target = F8B853D31FA8723A00892862 /* StickerPocket */;
 			targetProxy = F8B853F81FA8723B00892862 /* PBXContainerItemProxy */;
+		};
+		F8BEF2C11FA9A37D00EF218E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8BEF2B31FA9A37D00EF218E /* MsgStickerPocket */;
+			targetProxy = F8BEF2C01FA9A37D00EF218E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -669,6 +842,14 @@
 				F8BEF2621FA9660C00EF218E /* zh-Hans */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		F8BEF2BA1FA9A37D00EF218E /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8BEF2BB1FA9A37D00EF218E /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -878,6 +1059,42 @@
 			};
 			name = Release;
 		};
+		F8BEF2C41FA9A37D00EF218E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11DDB61EB0B6ACE750AD700D /* Pods-StickerPocket-MsgStickerPocket.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = MsgStickerPocket/MsgStickerPocket.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3ZDSC428LW;
+				INFOPLIST_FILE = MsgStickerPocket/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruihou.StickerPocket.MsgStickerPocket;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F8BEF2C51FA9A37D00EF218E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2363AE369065611C5B39484A /* Pods-StickerPocket-MsgStickerPocket.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = MsgStickerPocket/MsgStickerPocket.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3ZDSC428LW;
+				INFOPLIST_FILE = MsgStickerPocket/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruihou.StickerPocket.MsgStickerPocket;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -913,6 +1130,15 @@
 			buildConfigurations = (
 				F8B854071FA8723B00892862 /* Debug */,
 				F8B854081FA8723B00892862 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8BEF2C31FA9A37D00EF218E /* Build configuration list for PBXNativeTarget "MsgStickerPocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8BEF2C41FA9A37D00EF218E /* Debug */,
+				F8BEF2C51FA9A37D00EF218E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
