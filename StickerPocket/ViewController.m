@@ -7,11 +7,10 @@
 //
 
 #import "ViewController.h"
-#import <Colours/Colours.h>
-#import "UIImage+HRAddition.h"
-#import "NSData+HRAddition.h"
-@interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
-
+#import "SDImageCache+HRExtension.h"
+@interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) NSMutableArray *dataArray;
 @end
 
 @implementation ViewController
@@ -39,19 +38,22 @@
     }
 }
 
-- (IBAction)editItemAction:(id)sender {
-    NSLog(@"edit");
-}
-
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
-
-    UIColor *color = [image getMostAreaColor];
-    NSString *hexStr = color.hexString;
-    NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(image)];
-    NSString *url = imageData.getUniqueKey;
-
+    HRWeakSelf;
+    [[SDImageCache shareGroupInstance] saveImageWithInfo:info completion:^(BOOL isSuccess, UIImage *image, HRStickerModel *model) {
+        HRStrongSelf;
+        if (isSuccess) {
+            [strongSelf.dataArray addObject:model];
+            
+        }
+    }];
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (NSMutableArray *)dataArray {
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray new];
+    }
+    return _dataArray;
+}
 @end

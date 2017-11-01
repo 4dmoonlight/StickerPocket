@@ -12,6 +12,7 @@ target 'StickerPocket' do
   pod 'pop'
   pod 'Colours'
   pod 'FMDB'
+  pod 'Mantle'
 
   target 'StickerPocketTests' do
     inherit! :search_paths

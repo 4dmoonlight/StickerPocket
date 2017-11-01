@@ -7,9 +7,10 @@
 //
 
 #import <FMDB/FMDB.h>
-
+#import "HRStickerModel.h"
 @interface FMDatabaseQueue (HRExtension)
 
 + (instancetype)shareInstense;
-
+- (void)createStickerSql;
+- (void)insertModel:(HRStickerModel *)model completion:(void(^)(BOOL isSuccess))completion;
 @end

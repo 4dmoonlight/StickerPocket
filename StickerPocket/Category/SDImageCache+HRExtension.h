@@ -7,8 +7,8 @@
 //
 
 #import <SDWebImage/SDImageCache.h>
-
+#import "HRStickerModel.h"
 @interface SDImageCache (HRExtension)
 + (instancetype)shareGroupInstance;
-
+- (void)saveImageWithInfo:(NSDictionary *)info completion:(void(^)(BOOL isSuccess,UIImage *image,HRStickerModel *model))completion;
 @end

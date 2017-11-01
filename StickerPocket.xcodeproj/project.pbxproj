@@ -32,6 +32,7 @@
 		F8BEF28B1FA97CA900EF218E /* NSData+HRAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2851FA97CA900EF218E /* NSData+HRAddition.m */; };
 		F8BEF28C1FA97CA900EF218E /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2861FA97CA900EF218E /* UIView+MJExtension.m */; };
 		F8BEF28D1FA97CA900EF218E /* UIImage+HRAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2871FA97CA900EF218E /* UIImage+HRAddition.m */; };
+		F8BEF2931FA982E000EF218E /* HRStickerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2921FA982DF00EF218E /* HRStickerModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,8 @@
 		F8BEF2871FA97CA900EF218E /* UIImage+HRAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HRAddition.m"; sourceTree = "<group>"; };
 		F8BEF28F1FA97E8000EF218E /* MacroDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroDefinition.h; sourceTree = "<group>"; };
 		F8BEF2901FA97E9100EF218E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F8BEF2911FA982DF00EF218E /* HRStickerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRStickerModel.h; sourceTree = "<group>"; };
+		F8BEF2921FA982DF00EF218E /* HRStickerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRStickerModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +191,8 @@
 		F8B853D61FA8723A00892862 /* StickerPocket */ = {
 			isa = PBXGroup;
 			children = (
+				F8BEF2911FA982DF00EF218E /* HRStickerModel.h */,
+				F8BEF2921FA982DF00EF218E /* HRStickerModel.m */,
 				F8BEF27C1FA97CA900EF218E /* Category */,
 				F8BEF2631FA979C500EF218E /* PhotoBrowser */,
 				F8B8540F1FA8805F00892862 /* StickerPocket.entitlements */,
@@ -580,6 +585,7 @@
 				F8BEF28C1FA97CA900EF218E /* UIView+MJExtension.m in Sources */,
 				F8BEF2781FA979C500EF218E /* IDMPhoto.m in Sources */,
 				F8B853D91FA8723A00892862 /* AppDelegate.m in Sources */,
+				F8BEF2931FA982E000EF218E /* HRStickerModel.m in Sources */,
 				F8BEF2771FA979C500EF218E /* IDMCaptionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
