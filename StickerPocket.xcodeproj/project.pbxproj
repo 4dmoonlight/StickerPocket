@@ -53,6 +53,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F8BEF2AA1FA9A02000EF218E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		14C33BD7489FE3C0266FAA45 /* Pods-StickerPocketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickerPocketTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickerPocketTests/Pods-StickerPocketTests.release.xcconfig"; sourceTree = "<group>"; };
 		1864563AF6A74CD6507DF73F /* Pods-StickerPocketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickerPocketUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickerPocketUITests/Pods-StickerPocketUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +129,7 @@
 		F8BEF2921FA982DF00EF218E /* HRStickerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRStickerModel.m; sourceTree = "<group>"; };
 		F8BEF2941FA99A0200EF218E /* HRStickerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRStickerCollectionViewCell.h; sourceTree = "<group>"; };
 		F8BEF2951FA99A0200EF218E /* HRStickerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRStickerCollectionViewCell.m; sourceTree = "<group>"; };
+		F8BEF29C1FA9A02000EF218E /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +179,7 @@
 				D6EF012236F503F5D78AC75F /* libPods-StickerPocket.a */,
 				7957507CA4530603E2394EBA /* libPods-StickerPocketTests.a */,
 				A98185067225EF4C8FBB5CEE /* libPods-StickerPocketUITests.a */,
+				F8BEF29C1FA9A02000EF218E /* Messages.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -288,6 +303,7 @@
 				F8B853D21FA8723A00892862 /* Resources */,
 				2B89A3ACB558C1BF2FC5B73B /* [CP] Embed Pods Frameworks */,
 				7123661DA5F40882AE60BE25 /* [CP] Copy Pods Resources */,
+				F8BEF2AA1FA9A02000EF218E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);

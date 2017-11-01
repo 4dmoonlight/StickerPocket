@@ -56,8 +56,12 @@
     [[SDImageCache shareGroupInstance] saveImageWithInfo:info completion:^(BOOL isSuccess, UIImage *image, HRStickerModel *model) {
         HRStrongSelf;
         if (isSuccess) {
-            [strongSelf.dataArray addObject:model];
-            [strongSelf.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:self.dataArray.count-1 inSection:0]]];
+            [strongSelf.collectionView performBatchUpdates:^{
+                [strongSelf.dataArray addObject:model];
+                [strongSelf.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:self.dataArray.count-1 inSection:0]]];
+            } completion:^(BOOL finished) {
+                
+            }];
         }
     }];
     [picker dismissViewControllerAnimated:YES completion:nil];
