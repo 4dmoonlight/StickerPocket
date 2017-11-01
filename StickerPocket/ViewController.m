@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "SDImageCache+HRExtension.h"
+#import "FMDatabaseQueue+HRExtension.h"
+#import "HRStickerCollectionViewCell.h"
 @interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
@@ -18,12 +20,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self fetchData];
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)fetchData {
+    HRWeakSelf;
+    [[FMDatabaseQueue shareInstense] selectAllModelWithCompletion:^(NSArray *data) {
+        HRStrongSelf;
+        strongSelf.dataArray = [data mutableCopy];
+        [strongSelf.collectionView reloadData];
+    }];
 }
 
 - (IBAction)addItemAction:(id)sender {
@@ -38,13 +50,14 @@
     }
 }
 
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     HRWeakSelf;
     [[SDImageCache shareGroupInstance] saveImageWithInfo:info completion:^(BOOL isSuccess, UIImage *image, HRStickerModel *model) {
         HRStrongSelf;
         if (isSuccess) {
             [strongSelf.dataArray addObject:model];
-            
+            [strongSelf.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:self.dataArray.count-1 inSection:0]]];
         }
     }];
     [picker dismissViewControllerAnimated:YES completion:nil];
@@ -55,5 +68,19 @@
         _dataArray = [NSMutableArray new];
     }
     return _dataArray;
+}
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    HRStickerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StickerCell" forIndexPath:indexPath];
+    HRStickerModel *model = self.dataArray[indexPath.item];
+    cell.imageView.image = [[SDImageCache shareGroupInstance] imageFromCacheForKey:model.url];
+    return cell;
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.dataArray.count;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(SCREEN_WIDTH/3, SCREEN_WIDTH/3);
 }
 @end

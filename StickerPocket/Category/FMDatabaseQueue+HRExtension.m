@@ -38,4 +38,27 @@ static NSString * const createStickerSQL = @"CREATE TABLE if not exists 'Sticker
         }
     }];
 }
+
+- (void)selectAllModelWithCompletion:(void (^)(NSArray *))completion {
+    [[FMDatabaseQueue shareInstense] inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
+        NSMutableArray *array = [NSMutableArray new];
+        NSString * sql = @"select * from Sticker";
+        FMResultSet * rs = [db executeQuery:sql];
+        while ([rs next]) {
+            NSDictionary *dic = [rs resultDictionary];
+            NSError *error = nil;
+            HRStickerModel *model = [MTLJSONAdapter modelOfClass:[HRStickerModel class] fromJSONDictionary:dic error:&error];
+            if (!error) {
+                DebugLog(@"%@",dic);
+                [array addObject:model];
+            } else {
+                DebugLog(@"%@",error.localizedDescription);
+                //delete data
+            }
+            if (completion) {
+                completion(array);
+            }
+        }
+    }];
+}
 @end

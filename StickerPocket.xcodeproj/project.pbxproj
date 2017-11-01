@@ -33,6 +33,7 @@
 		F8BEF28C1FA97CA900EF218E /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2861FA97CA900EF218E /* UIView+MJExtension.m */; };
 		F8BEF28D1FA97CA900EF218E /* UIImage+HRAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2871FA97CA900EF218E /* UIImage+HRAddition.m */; };
 		F8BEF2931FA982E000EF218E /* HRStickerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2921FA982DF00EF218E /* HRStickerModel.m */; };
+		F8BEF2961FA99A0200EF218E /* HRStickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEF2951FA99A0200EF218E /* HRStickerCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,8 @@
 		F8BEF2901FA97E9100EF218E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F8BEF2911FA982DF00EF218E /* HRStickerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRStickerModel.h; sourceTree = "<group>"; };
 		F8BEF2921FA982DF00EF218E /* HRStickerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRStickerModel.m; sourceTree = "<group>"; };
+		F8BEF2941FA99A0200EF218E /* HRStickerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRStickerCollectionViewCell.h; sourceTree = "<group>"; };
+		F8BEF2951FA99A0200EF218E /* HRStickerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRStickerCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +203,8 @@
 				F8B853D81FA8723A00892862 /* AppDelegate.m */,
 				F8B853DA1FA8723A00892862 /* ViewController.h */,
 				F8B853DB1FA8723A00892862 /* ViewController.m */,
+				F8BEF2941FA99A0200EF218E /* HRStickerCollectionViewCell.h */,
+				F8BEF2951FA99A0200EF218E /* HRStickerCollectionViewCell.m */,
 				F8B853DD1FA8723A00892862 /* Main.storyboard */,
 				F8B853E01FA8723A00892862 /* Assets.xcassets */,
 				F8B853E21FA8723A00892862 /* LaunchScreen.storyboard */,
@@ -586,6 +591,7 @@
 				F8BEF2781FA979C500EF218E /* IDMPhoto.m in Sources */,
 				F8B853D91FA8723A00892862 /* AppDelegate.m in Sources */,
 				F8BEF2931FA982E000EF218E /* HRStickerModel.m in Sources */,
+				F8BEF2961FA99A0200EF218E /* HRStickerCollectionViewCell.m in Sources */,
 				F8BEF2771FA979C500EF218E /* IDMCaptionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
