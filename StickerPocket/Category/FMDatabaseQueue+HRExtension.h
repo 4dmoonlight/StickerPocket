@@ -13,6 +13,7 @@
 + (instancetype)shareInstense;
 - (void)createStickerSql;
 - (void)insertModel:(HRStickerModel *)model completion:(void(^)(BOOL isSuccess))completion;
+- (void)deleteModel:(HRStickerModel *)model completion:(void(^)(BOOL isSuccess))completion;
 - (void)selectAllModelWithCompletion:(void(^)(NSArray *data))completion;
 
 @end

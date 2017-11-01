@@ -8,7 +8,7 @@
 
 #import "IDMPhoto.h"
 #import "IDMPhotoBrowser.h"
-
+#import "SDImageCache+HRExtension.h"
 // Private
 @interface IDMPhoto () {
     // Image Sources
@@ -50,6 +50,10 @@ caption = _caption;
 
 + (IDMPhoto *)photoWithURL:(NSURL *)url {
 	return [[IDMPhoto alloc] initWithURL:url];
+}
+
++ (IDMPhoto *)photoWithCacheKey:(NSString *)cacheKey {
+    return [[IDMPhoto alloc] initWithCacheKey:cacheKey];
 }
 
 + (NSArray *)photosWithImages:(NSArray *)imagesArray {
@@ -118,6 +122,13 @@ caption = _caption;
 	return self;
 }
 
+- (instancetype)initWithCacheKey:(NSString *)cacheKey {
+    if ((self = [super init])) {
+        _cacheKey = [cacheKey copy];
+    }
+    return self;
+}
+
 #pragma mark IDMPhoto Protocol Methods
 
 - (UIImage *)underlyingImage {
@@ -150,7 +161,15 @@ caption = _caption;
 				
 				[self performSelectorOnMainThread:@selector(imageLoadingComplete) withObject:nil waitUntilDone:NO];
 			}];
-        } else {
+        } else if (_cacheKey) {
+            [[SDImageCache shareGroupInstance] queryCacheOperationForKey:_cacheKey done:^(UIImage * _Nullable image, NSData * _Nullable data, SDImageCacheType cacheType) {
+                if (image) {
+                    self.underlyingImage = image;
+                }
+                [self performSelectorOnMainThread:@selector(imageLoadingComplete) withObject:nil waitUntilDone:NO];
+            }];
+        }
+        else {
             // Failed - no source
             self.underlyingImage = nil;
             [self imageLoadingComplete];

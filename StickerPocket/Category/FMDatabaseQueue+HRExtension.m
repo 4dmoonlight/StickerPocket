@@ -39,6 +39,17 @@ static NSString * const createStickerSQL = @"CREATE TABLE if not exists 'Sticker
     }];
 }
 
+- (void)deleteModel:(HRStickerModel *)model completion:(void (^)(BOOL))completion {
+    [[FMDatabaseQueue shareInstense] inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
+        NSString *sql = [NSString stringWithFormat:@"delete from Sticker where img_id = %li",model.imgId.longValue];
+        BOOL res = [db executeUpdate:sql];
+        if (completion) {
+            completion(res);
+        }
+        
+    }];
+}
+
 - (void)selectAllModelWithCompletion:(void (^)(NSArray *))completion {
     [[FMDatabaseQueue shareInstense] inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
         NSMutableArray *array = [NSMutableArray new];

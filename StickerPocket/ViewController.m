@@ -10,6 +10,7 @@
 #import "SDImageCache+HRExtension.h"
 #import "FMDatabaseQueue+HRExtension.h"
 #import "HRStickerCollectionViewCell.h"
+#import "IDMPhotoBrowser.h"
 @interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
@@ -86,5 +87,14 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(SCREEN_WIDTH/3, SCREEN_WIDTH/3);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    HRStickerModel *model = self.dataArray[indexPath.item];
+    IDMPhoto *photo = [IDMPhoto photoWithCacheKey:model.url];
+    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:@[photo] animatedFromView:[collectionView cellForItemAtIndexPath:indexPath]];
+    [self presentViewController:browser animated:YES completion:^{
+        
+    }];
 }
 @end
