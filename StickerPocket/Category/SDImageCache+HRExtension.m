@@ -42,6 +42,7 @@
         return;
     }
     if (image.size.width > 1000||image.size.height > 1000) {
+        DebugLog(@"image size:%f,%f",image.size.width,image.size.height);
         if (completion) {
             NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:@{
                                                                             NSLocalizedFailureReasonErrorKey:NSLocalizedString(@"Image is too large", nil)
