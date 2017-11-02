@@ -29,7 +29,7 @@
 @end
 
 // IDMPhotoBrowser
-@interface IDMPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate>
+@interface IDMPhotoBrowser : UIViewController <UIScrollViewDelegate>
 
 // Properties
 @property (nonatomic, strong) id <IDMPhotoBrowserDelegate> delegate;

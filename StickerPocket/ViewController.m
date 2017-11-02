@@ -120,6 +120,8 @@
     IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:@[photo] animatedFromView:[(HRStickerCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath] imageView]];
     browser.delegate = self;
     browser.useWhiteBackgroundColor = YES;
+    browser.dismissOnTouch = YES;
+    browser.displayDoneButton = NO;
     browser.actionButtonTitles = @[NSLocalizedString(@"Delete", nil),NSLocalizedString(@"Save to album", nil)];
     [self presentViewController:browser animated:YES completion:^{
         

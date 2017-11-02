@@ -35,6 +35,6 @@
 //Color
 #define kRGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
 #define kRGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
-
+#define THEME_COLOR_PURPLE kRGBCOLOR(89,114,240)
 
 #endif
