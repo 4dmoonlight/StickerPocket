@@ -9,5 +9,8 @@
 #import "HRStickerCollectionViewCell.h"
 
 @implementation HRStickerCollectionViewCell
-
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    _imageView.hidden = NO;
+}
 @end

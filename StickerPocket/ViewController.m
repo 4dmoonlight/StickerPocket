@@ -77,7 +77,10 @@
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     HRStickerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StickerCell" forIndexPath:indexPath];
     HRStickerModel *model = self.dataArray[indexPath.item];
-    cell.imageView.image = [[SDImageCache shareGroupInstance] imageFromCacheForKey:model.url];
+//    cell.imageView.image = [[SDImageCache shareGroupInstance] imageFromCacheForKey:model.url];
+    [[SDImageCache shareGroupInstance] queryCacheOperationForKey:model.url done:^(UIImage * _Nullable image, NSData * _Nullable data, SDImageCacheType cacheType) {
+        cell.imageView.image = image;
+    }];
     return cell;
 }
 

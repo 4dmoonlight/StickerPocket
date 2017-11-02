@@ -41,6 +41,7 @@
     dispatch_group_t serviceGroup = dispatch_group_create();
     dispatch_group_enter(serviceGroup);
     [[SDImageCache shareGroupInstance] storeImage:image forKey:url completion:^{
+        DebugLog(@"sdimage store success");
         dispatch_group_leave(serviceGroup);
     }];
 
@@ -50,11 +51,13 @@
     model.url = url;
     [[FMDatabaseQueue shareInstense] insertModel:model completion:^(BOOL isSuccess) {
         insertSeccess = isSuccess;
+        DebugLog(@"fmdatabase store success");
         dispatch_group_leave(serviceGroup);
     }];
     
     dispatch_group_notify(serviceGroup, dispatch_get_main_queue(), ^{
         if (completion) {
+            DebugLog(@"group notify");
             completion(insertSeccess,image,model);
         }
     });
