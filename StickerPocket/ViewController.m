@@ -105,7 +105,25 @@
     switch (buttonIndex) {
         case 0:
         {
-            
+            UIAlertController *alertController;
+            if (CURRENT_DEVICE_IS_IPAD) {
+                alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleAlert];
+            } else {
+                alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            }
+            HRWeakSelf;
+            UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Delete", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                HRStrongSelf;
+                NSInteger index = [strongSelf.collectionView indexPathsForSelectedItems].firstObject.item;
+                [strongSelf deletePhotoAtIndex:index];
+                [photoBrowser dismissViewControllerAnimated:YES completion:nil];
+            }];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            [alertController addAction:deleteAction];
+            [alertController addAction:cancelAction];
+            [photoBrowser presentViewController:alertController animated:YES completion:nil];
         }
             break;
         case 1:
@@ -116,5 +134,25 @@
         default:
             break;
     }
+}
+
+- (void)deletePhotoAtIndex:(NSInteger)photoIndex {
+    HRStickerModel *model = self.dataArray[photoIndex];
+    HRWeakSelf;
+    [[FMDatabaseQueue shareInstense] deleteModel:model completion:^(BOOL isSuccess) {
+        HRStrongSelf;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (isSuccess) {
+                [strongSelf.collectionView performBatchUpdates:^{
+                    [strongSelf.dataArray removeObject:model];
+                    //                [strongSelf.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:photoIndex inSection:0]]];
+                    [strongSelf.collectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:photoIndex inSection:0]]];
+                } completion:^(BOOL finished) {
+                    
+                }];
+            }
+        });
+
+    }];
 }
 @end

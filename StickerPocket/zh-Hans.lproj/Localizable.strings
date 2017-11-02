@@ -5,5 +5,6 @@
   Created by Rui Hou on 01/11/2017.
   Copyright © 2017 Rui Hou. All rights reserved.
 */
-"hello" = "你好";
-
+"Delete" = "删除";
+"Save to album" = "保存到相册";
+"Cancel" = "取消";
