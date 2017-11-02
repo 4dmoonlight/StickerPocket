@@ -11,7 +11,7 @@
 #import "FMDatabaseQueue+HRExtension.h"
 #import "HRStickerCollectionViewCell.h"
 #import "IDMPhotoBrowser.h"
-@interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,IDMPhotoBrowserDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @end
@@ -92,9 +92,29 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     HRStickerModel *model = self.dataArray[indexPath.item];
     IDMPhoto *photo = [IDMPhoto photoWithCacheKey:model.url];
-    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:@[photo] animatedFromView:[collectionView cellForItemAtIndexPath:indexPath]];
+    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:@[photo] animatedFromView:[(HRStickerCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath] imageView]];
+    browser.delegate = self;
+    browser.useWhiteBackgroundColor = YES;
+    browser.actionButtonTitles = @[NSLocalizedString(@"Delete", nil),NSLocalizedString(@"Save to album", nil)];
     [self presentViewController:browser animated:YES completion:^{
         
     }];
+}
+
+- (void)photoBrowser:(IDMPhotoBrowser *)photoBrowser didDismissActionSheetWithButtonIndex:(NSUInteger)buttonIndex photoIndex:(NSUInteger)photoIndex {
+    switch (buttonIndex) {
+        case 0:
+        {
+            
+        }
+            break;
+        case 1:
+        {
+            
+        }
+            break;
+        default:
+            break;
+    }
 }
 @end
