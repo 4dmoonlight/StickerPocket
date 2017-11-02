@@ -11,6 +11,7 @@
 #import "FMDatabaseQueue+HRExtension.h"
 #import "HRStickerCollectionViewCell.h"
 #import "IDMPhotoBrowser.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 @interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,IDMPhotoBrowserDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
@@ -131,12 +132,23 @@
             break;
         case 1:
         {
-            
+            NSInteger index = [self.collectionView indexPathsForSelectedItems].firstObject.item;
+            HRStickerModel *model = self.dataArray[index];
+            [[SDImageCache shareGroupInstance] queryCacheOperationForKey:model.url done:^(UIImage * _Nullable image, NSData * _Nullable data, SDImageCacheType cacheType) {
+                void* contextInfo = NULL;
+                UIImageWriteToSavedPhotosAlbum(image, self,@selector(image:didFinishSavingWithError:contextInfo:),contextInfo);
+            }];
         }
             break;
         default:
             break;
     }
+}
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void*)contextInfo {
+    MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:[UIApplication sharedApplication].keyWindow];
+    hud.label.text = NSLocalizedString(@"Save success", nil);
+    [hud showAnimated:YES];
+    [hud hideAnimated:YES afterDelay:3];
 }
 
 - (void)deletePhotoAtIndex:(NSInteger)photoIndex {

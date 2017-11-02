@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>用于选取图片发送或保存图片到相册</string>
+	<string>For selecting stickers</string>
 	<key>NSCameraUsageDescription</key>
-	<string>用于拍摄图片发送</string>
+	<string>For taking photos</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>For saving stickers</string>
 	<key>CFBundleAllowMixedLocalizations</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
