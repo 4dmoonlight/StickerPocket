@@ -146,9 +146,11 @@
 }
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void*)contextInfo {
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:[UIApplication sharedApplication].keyWindow];
+    [[UIApplication sharedApplication].keyWindow addSubview:hud];
     hud.label.text = NSLocalizedString(@"Save success", nil);
+    hud.mode = MBProgressHUDModeText;
     [hud showAnimated:YES];
-    [hud hideAnimated:YES afterDelay:3];
+    [hud hideAnimated:YES afterDelay:2];
 }
 
 - (void)deletePhotoAtIndex:(NSInteger)photoIndex {
