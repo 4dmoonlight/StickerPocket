@@ -119,8 +119,6 @@
 		F8B853F71FA8723B00892862 /* StickerPocketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StickerPocketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B853FB1FA8723B00892862 /* StickerPocketUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StickerPocketUITests.m; sourceTree = "<group>"; };
 		F8B853FD1FA8723B00892862 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F8B8540B1FA877BD00892862 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		F8B8540E1FA87BEB00892862 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		F8B8540F1FA8805F00892862 /* StickerPocket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StickerPocket.entitlements; sourceTree = "<group>"; };
 		F8BEF2601FA9660A00EF218E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F8BEF2621FA9660C00EF218E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -166,6 +164,8 @@
 		F8BEF3331FA9B23000EF218E /* MsgStickerPocket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MsgStickerPocket.entitlements; sourceTree = "<group>"; };
 		F8BEF3341FA9B2F400EF218E /* HRMsgStickerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRMsgStickerCollectionViewCell.h; sourceTree = "<group>"; };
 		F8BEF3351FA9B2F400EF218E /* HRMsgStickerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRMsgStickerCollectionViewCell.m; sourceTree = "<group>"; };
+		F8BEF34E1FAB5A7300EF218E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		F8BEF3501FAB5AC100EF218E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -821,8 +821,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F8B853DE1FA8723A00892862 /* Base */,
-				F8B8540B1FA877BD00892862 /* zh-Hans */,
-				F8B8540E1FA87BEB00892862 /* en */,
+				F8BEF34E1FAB5A7300EF218E /* en */,
+				F8BEF3501FAB5AC100EF218E /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

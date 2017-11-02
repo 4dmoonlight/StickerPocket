@@ -2,8 +2,5 @@
 /* Class = "UINavigationItem"; title = "Pocket"; ObjectID = "DjP-er-gQt"; */
 "DjP-er-gQt.title" = "Pocket";
 
-/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "gi9-pC-uB8"; */
-"gi9-pC-uB8.title" = "编辑";
-
-/* Class = "UIBarButtonItem"; title = "Add"; ObjectID = "pDI-rP-5Ah"; */
-"pDI-rP-5Ah.title" = "添加";
+/* Class = "UILabel"; text = "No Stickers\nTap to add one"; ObjectID = "UwA-rk-0e5"; */
+"UwA-rk-0e5.text" = "还没有表情\n点击来添加一个";

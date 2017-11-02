@@ -13,6 +13,7 @@
 #import "IDMPhotoBrowser.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 @interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,IDMPhotoBrowserDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @end
@@ -22,6 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tipLabelDidTap:)];
+    [_tipLabel addGestureRecognizer:tapGes];
+    _tipLabel.userInteractionEnabled = YES;
     [self fetchData];
 }
 
@@ -29,6 +33,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)tipLabelDidTap:(id)sender {
+    [self addItemAction:nil];
 }
 
 - (void)fetchData {
@@ -86,7 +94,13 @@
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.dataArray.count;
+    NSInteger count = self.dataArray.count;
+    if (count>0) {
+        _tipLabel.hidden = YES;
+    } else {
+        _tipLabel.hidden = NO;
+    }
+    return count;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
