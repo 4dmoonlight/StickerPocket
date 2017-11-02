@@ -13,6 +13,7 @@ target 'StickerPocket' do
   pod 'Colours'
   pod 'FMDB'
   pod 'Mantle'
+  pod 'MBProgressHUD'
   target 'MsgStickerPocket' do
       pod 'Mantle'
       pod 'FMDB'
