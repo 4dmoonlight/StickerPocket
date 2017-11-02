@@ -10,6 +10,5 @@
 
 @interface UIImage (HRAddition)
 - (UIColor *)getMostAreaColor;
-- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size;
-- (UIImage *)reSizeImage;
+
 @end

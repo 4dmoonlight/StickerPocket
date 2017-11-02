@@ -52,7 +52,7 @@
     if ([UIImagePickerController isSourceTypeAvailable:(UIImagePickerControllerSourceTypePhotoLibrary)]) {
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         picker.delegate = self;
-        picker.allowsEditing = YES;
+        picker.allowsEditing = NO;
         //        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:picker];
         [self presentViewController:picker animated:YES completion:^{
             
@@ -63,7 +63,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     HRWeakSelf;
-    [[SDImageCache shareGroupInstance] saveImageWithInfo:info completion:^(BOOL isSuccess, UIImage *image, HRStickerModel *model) {
+    [[SDImageCache shareGroupInstance] saveImageWithInfo:info completion:^(BOOL isSuccess, UIImage *image, HRStickerModel *model, NSError *error) {
         HRStrongSelf;
         if (isSuccess) {
             [strongSelf.collectionView performBatchUpdates:^{
@@ -72,6 +72,13 @@
             } completion:^(BOOL finished) {
                 
             }];
+        } else {
+            MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
+            hud.mode = MBProgressHUDModeText;
+            hud.label.text = error.localizedFailureReason;
+            [self.view addSubview:hud];
+            [hud showAnimated:YES];
+            [hud hideAnimated:YES afterDelay:1.5];
         }
     }];
     [picker dismissViewControllerAnimated:YES completion:nil];

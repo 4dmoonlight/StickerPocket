@@ -1313,7 +1313,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 - (void)actionButtonPressed:(id)sender {
     id <IDMPhoto> photo = [self photoAtIndex:_currentPageIndex];
 
-    if ([self numberOfPhotos] > 0 && [photo underlyingImage]) {
+//    if ([self numberOfPhotos] > 0 && [photo underlyingImage]) {
         if(!_actionButtonTitles)
         {
             // Activity view
@@ -1368,7 +1368,9 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 
         // Keep controls hidden
         [self setControlsHidden:NO animated:YES permanent:YES];
-    }
+//    } else {
+//        [self doneButtonPressed:nil];
+//    }
 }
 #pragma mark - pop Animation
 

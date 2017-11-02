@@ -30,8 +30,26 @@
     return [paths stringByAppendingPathComponent:fullNamespace];
 }
 
-- (void)saveImageWithInfo:(NSDictionary *)info completion:(void (^)(BOOL, UIImage *, HRStickerModel *))completion {
-    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+- (void)saveImageWithInfo:(NSDictionary *)info completion:(void (^)(BOOL, UIImage *, HRStickerModel *, NSError *))completion {
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    if (!image) {
+        if (completion) {
+            NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:@{
+                                                                            NSLocalizedFailureReasonErrorKey:NSLocalizedString(@"Image not exist", nil)
+                                                                            }];
+            completion(NO,image,nil,error);
+        }
+        return;
+    }
+    if (image.size.width > 1000||image.size.height > 1000) {
+        if (completion) {
+            NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:@{
+                                                                            NSLocalizedFailureReasonErrorKey:NSLocalizedString(@"Image is too large", nil)
+                                                                            }];
+            completion(NO,image,nil,error);
+        }
+        return;
+    }
     UIColor *color = [image getMostAreaColor];
     NSString *hexStr = color.hexString;
     NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(image)];
@@ -58,7 +76,10 @@
     dispatch_group_notify(serviceGroup, dispatch_get_main_queue(), ^{
         if (completion) {
             DebugLog(@"group notify");
-            completion(insertSeccess,image,model);
+            NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:@{
+                                                                            NSLocalizedFailureReasonErrorKey:NSLocalizedString(@"Insert image fail", nil)
+                                                                            }];
+            completion(insertSeccess,image,model,error);
         }
     });
 }

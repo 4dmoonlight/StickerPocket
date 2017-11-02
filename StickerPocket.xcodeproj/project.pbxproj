@@ -306,22 +306,22 @@
 		F8BEF2631FA979C500EF218E /* PhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				F8BEF2641FA979C500EF218E /* IDMPhotoBrowser.bundle */,
 				F8BEF2651FA979C500EF218E /* IDMCaptionView.h */,
+				F8BEF26C1FA979C500EF218E /* IDMCaptionView.m */,
+				F8BEF2711FA979C500EF218E /* IDMPBConstants.h */,
 				F8BEF2661FA979C500EF218E /* IDMPBLocalizations.bundle */,
-				F8BEF2671FA979C500EF218E /* IDMZoomingScrollView.h */,
 				F8BEF2681FA979C500EF218E /* IDMPhoto.h */,
+				F8BEF26D1FA979C500EF218E /* IDMPhoto.m */,
+				F8BEF2641FA979C500EF218E /* IDMPhotoBrowser.bundle */,
 				F8BEF2691FA979C500EF218E /* IDMPhotoBrowser.h */,
+				F8BEF2701FA979C500EF218E /* IDMPhotoBrowser.m */,
+				F8BEF26F1FA979C500EF218E /* IDMPhotoProtocol.h */,
+				F8BEF2731FA979C500EF218E /* IDMTapDetectingImageView.h */,
 				F8BEF26A1FA979C500EF218E /* IDMTapDetectingImageView.m */,
 				F8BEF26B1FA979C500EF218E /* IDMTapDetectingView.h */,
-				F8BEF26C1FA979C500EF218E /* IDMCaptionView.m */,
-				F8BEF26D1FA979C500EF218E /* IDMPhoto.m */,
-				F8BEF26E1FA979C500EF218E /* IDMZoomingScrollView.m */,
-				F8BEF26F1FA979C500EF218E /* IDMPhotoProtocol.h */,
-				F8BEF2701FA979C500EF218E /* IDMPhotoBrowser.m */,
-				F8BEF2711FA979C500EF218E /* IDMPBConstants.h */,
 				F8BEF2721FA979C500EF218E /* IDMTapDetectingView.m */,
-				F8BEF2731FA979C500EF218E /* IDMTapDetectingImageView.h */,
+				F8BEF2671FA979C500EF218E /* IDMZoomingScrollView.h */,
+				F8BEF26E1FA979C500EF218E /* IDMZoomingScrollView.m */,
 			);
 			path = PhotoBrowser;
 			sourceTree = "<group>";
