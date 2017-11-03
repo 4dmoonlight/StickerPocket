@@ -58,7 +58,7 @@
     NSLog(@"%@",url);
     dispatch_group_t checkGroup = dispatch_group_create();
     dispatch_group_enter(checkGroup);
-    __block urlExist = NO;
+    __block BOOL urlExist = NO;
     [FMDatabaseQueue checkModelExist:url completion:^(BOOL isExist) {
         urlExist = isExist;
         dispatch_group_leave(checkGroup);
