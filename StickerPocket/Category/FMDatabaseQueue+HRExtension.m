@@ -30,9 +30,7 @@ static NSString * const createStickerSQL = @"CREATE TABLE if not exists 'Sticker
 - (void)insertModel:(HRStickerModel *)model completion:(void (^)(BOOL))completion {
     [[FMDatabaseQueue shareInstense] inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
         NSString * sql = @"insert into Sticker (img_url, color, add_date) values(?, ?, ?) ";
-        NSTimeInterval addDate = [[NSDate date] timeIntervalSince1970];
-        NSString *color = model.color;
-        BOOL res = [db executeUpdate:sql, model.url, color,@(addDate)];
+        BOOL res = [db executeUpdate:sql, model.url, model.color,model.date];
         if (completion) {
             completion(res);
         }
@@ -70,6 +68,20 @@ static NSString * const createStickerSQL = @"CREATE TABLE if not exists 'Sticker
             if (completion) {
                 completion(array);
             }
+        }
+    }];
+}
+
+- (void)checkModelExist:(NSString *)imgUrl completion:(void (^)(BOOL))completion {
+    [[FMDatabaseQueue shareInstense] inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
+        BOOL flag = NO;
+        NSString *statement = [NSString stringWithFormat:@"SELECT * FROM Sticker WHERE img_url = '%@'",imgUrl];
+        FMResultSet *resultSet = [db executeQuery:statement];
+        if ([resultSet next]) {
+            flag = YES;
+        }
+        if (completion) {
+            completion(flag);
         }
     }];
 }

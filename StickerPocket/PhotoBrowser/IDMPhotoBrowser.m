@@ -1375,6 +1375,9 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 //        [self doneButtonPressed:nil];
 //    }
 }
+- (void)animateDismissWithCompletion:(void(^)(void))completion {
+    [self doneButtonPressed:nil];
+}
 #pragma mark - pop Animation
 
 - (void)animateView:(UIView *)view toFrame:(CGRect)frame completion:(void (^)(void))completion

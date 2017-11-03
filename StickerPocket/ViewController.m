@@ -143,7 +143,7 @@
                 HRStrongSelf;
                 NSInteger index = [strongSelf.collectionView indexPathsForSelectedItems].firstObject.item;
                 [strongSelf deletePhotoAtIndex:index];
-                [photoBrowser dismissViewControllerAnimated:YES completion:nil];
+                [photoBrowser animateDismissWithCompletion:nil];
             }];
             UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
                 
