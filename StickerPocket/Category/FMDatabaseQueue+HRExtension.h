@@ -11,9 +11,9 @@
 @interface FMDatabaseQueue (HRExtension)
 
 + (instancetype)shareInstense;
-- (void)createStickerSql;
-- (void)insertModel:(HRStickerModel *)model completion:(void(^)(BOOL isSuccess))completion;
-- (void)deleteModel:(HRStickerModel *)model completion:(void(^)(BOOL isSuccess))completion;
-- (void)selectAllModelWithCompletion:(void(^)(NSArray *data))completion;
-- (void)checkModelExist:(NSString *)imgUrl completion:(void(^)(BOOL isExist))completion;
++ (void)createStickerSql;
++ (void)insertModel:(HRStickerModel *)model completion:(void(^)(BOOL isSuccess))completion;
++ (void)deleteModel:(HRStickerModel *)model completion:(void(^)(BOOL isSuccess))completion;
++ (void)selectAllModelWithCompletion:(void(^)(NSArray *data))completion;
++ (void)checkModelExist:(NSString *)imgUrl completion:(void(^)(BOOL isExist))completion;
 @end

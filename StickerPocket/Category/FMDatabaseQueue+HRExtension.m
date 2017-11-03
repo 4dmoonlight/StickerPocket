@@ -21,13 +21,13 @@ static NSString * const createStickerSQL = @"CREATE TABLE if not exists 'Sticker
     return queue;
 }
 
-- (void)createStickerSql {
++ (void)createStickerSql {
     [[FMDatabaseQueue shareInstense] inDatabase:^(FMDatabase * _Nonnull db) {
         [db executeUpdate:createStickerSQL];
     }];
 }
 
-- (void)insertModel:(HRStickerModel *)model completion:(void (^)(BOOL))completion {
++ (void)insertModel:(HRStickerModel *)model completion:(void (^)(BOOL))completion {
     [[FMDatabaseQueue shareInstense] inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
         NSString * sql = @"insert into Sticker (img_url, color, add_date) values(?, ?, ?) ";
         BOOL res = [db executeUpdate:sql, model.url, model.color,model.date];
@@ -37,7 +37,7 @@ static NSString * const createStickerSQL = @"CREATE TABLE if not exists 'Sticker
     }];
 }
 
-- (void)deleteModel:(HRStickerModel *)model completion:(void (^)(BOOL))completion {
++ (void)deleteModel:(HRStickerModel *)model completion:(void (^)(BOOL))completion {
     [[FMDatabaseQueue shareInstense] inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
         DebugLog(@"%@",[NSThread currentThread]);
         NSString *sql = [NSString stringWithFormat:@"delete from Sticker where img_id = %li",model.imgId.longValue];
@@ -49,7 +49,7 @@ static NSString * const createStickerSQL = @"CREATE TABLE if not exists 'Sticker
     }];
 }
 
-- (void)selectAllModelWithCompletion:(void (^)(NSArray *))completion {
++ (void)selectAllModelWithCompletion:(void (^)(NSArray *))completion {
     [[FMDatabaseQueue shareInstense] inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
         NSMutableArray *array = [NSMutableArray new];
         NSString * sql = @"select * from Sticker";
@@ -72,8 +72,8 @@ static NSString * const createStickerSQL = @"CREATE TABLE if not exists 'Sticker
     }];
 }
 
-- (void)checkModelExist:(NSString *)imgUrl completion:(void (^)(BOOL))completion {
-    [[FMDatabaseQueue shareInstense] inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
++ (void)checkModelExist:(NSString *)imgUrl completion:(void (^)(BOOL))completion {
+    [[FMDatabaseQueue shareInstense] inDatabase:^(FMDatabase * _Nonnull db) {
         BOOL flag = NO;
         NSString *statement = [NSString stringWithFormat:@"SELECT * FROM Sticker WHERE img_url = '%@'",imgUrl];
         FMResultSet *resultSet = [db executeQuery:statement];

@@ -41,7 +41,7 @@
 
 - (void)fetchData {
     HRWeakSelf;
-    [[FMDatabaseQueue shareInstense] selectAllModelWithCompletion:^(NSArray *data) {
+    [FMDatabaseQueue selectAllModelWithCompletion:^(NSArray *data) {
         HRStrongSelf;
         strongSelf.dataArray = [data mutableCopy];
         [strongSelf.collectionView reloadData];
@@ -179,7 +179,7 @@
 - (void)deletePhotoAtIndex:(NSInteger)photoIndex {
     HRStickerModel *model = self.dataArray[photoIndex];
     HRWeakSelf;
-    [[FMDatabaseQueue shareInstense] deleteModel:model completion:^(BOOL isSuccess) {
+    [FMDatabaseQueue deleteModel:model completion:^(BOOL isSuccess) {
         HRStrongSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
             if (isSuccess) {

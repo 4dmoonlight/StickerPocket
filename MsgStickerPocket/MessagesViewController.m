@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _session = [[MSSession alloc] init];
-    [[FMDatabaseQueue shareInstense] createStickerSql];
+    [FMDatabaseQueue createStickerSql];
     [self fetchData];
     DebugLog(@"hello");
 }
@@ -34,7 +34,7 @@
 
 - (void)fetchData {
     HRWeakSelf;
-    [[FMDatabaseQueue shareInstense] selectAllModelWithCompletion:^(NSArray *data) {
+    [FMDatabaseQueue selectAllModelWithCompletion:^(NSArray *data) {
         HRStrongSelf;
         strongSelf.dataArray = [data mutableCopy];
         [strongSelf.collectionView reloadData];

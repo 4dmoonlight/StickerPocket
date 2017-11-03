@@ -56,50 +56,58 @@
     NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(image)];
     NSString *url = imageData.getUniqueKey;
     NSLog(@"%@",url);
-    [[FMDatabaseQueue shareInstense] checkModelExist:url completion:^(BOOL isExist) {
-        if (isExist) {
+    dispatch_group_t checkGroup = dispatch_group_create();
+    dispatch_group_enter(checkGroup);
+    __block urlExist = NO;
+    [FMDatabaseQueue checkModelExist:url completion:^(BOOL isExist) {
+        urlExist = isExist;
+        dispatch_group_leave(checkGroup);
+    }];
+    dispatch_group_notify(checkGroup, dispatch_get_main_queue(), ^{
+        if (urlExist) {
             if (completion) {
                 NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:@{
                                                                                 NSLocalizedFailureReasonErrorKey:NSLocalizedString(@"Stickers already added", nil)
                                                                                 }];
                 completion(NO,image,nil,error);
             }
-            return;
-
-        }
-    }];
-    __block BOOL insertSeccess = NO;
-    dispatch_group_t serviceGroup = dispatch_group_create();
-    dispatch_group_enter(serviceGroup);
-    [[SDImageCache shareGroupInstance] storeImage:image forKey:url completion:^{
-        DebugLog(@"sdimage store success");
-        dispatch_group_leave(serviceGroup);
-    }];
-
-    dispatch_group_enter(serviceGroup);
-    HRStickerModel *model = [HRStickerModel new];
-    model.color = hexStr;
-    model.url = url;
-    NSTimeInterval addDate = [[NSDate date] timeIntervalSince1970];
-    model.date = @(addDate);
-    [[FMDatabaseQueue shareInstense] insertModel:model completion:^(BOOL isSuccess) {
-        insertSeccess = isSuccess;
-        DebugLog(@"fmdatabase store success");
-        dispatch_group_leave(serviceGroup);
-    }];
-    
-    dispatch_group_notify(serviceGroup, dispatch_get_main_queue(), ^{
-        if (completion) {
-            DebugLog(@"group notify");
-            if(insertSeccess) {
-                completion(insertSeccess,image,model,nil);
-            } else {
-                NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:@{
-                                                                                NSLocalizedFailureReasonErrorKey:NSLocalizedString(@"Insert image fail", nil)
-                                                                                }];
-                completion(insertSeccess,image,model,error);
-            }
+        } else {
+            __block BOOL insertSeccess = NO;
+            dispatch_group_t serviceGroup = dispatch_group_create();
+            dispatch_group_enter(serviceGroup);
+            [[SDImageCache shareGroupInstance] storeImage:image forKey:url completion:^{
+                DebugLog(@"sdimage store success");
+                dispatch_group_leave(serviceGroup);
+            }];
+            
+            dispatch_group_enter(serviceGroup);
+            HRStickerModel *model = [HRStickerModel new];
+            model.color = hexStr;
+            model.url = url;
+            NSTimeInterval addDate = [[NSDate date] timeIntervalSince1970];
+            model.date = @(addDate);
+            [FMDatabaseQueue insertModel:model completion:^(BOOL isSuccess) {
+                insertSeccess = isSuccess;
+                DebugLog(@"fmdatabase store success");
+                dispatch_group_leave(serviceGroup);
+            }];
+            
+            dispatch_group_notify(serviceGroup, dispatch_get_main_queue(), ^{
+                if (completion) {
+                    DebugLog(@"group notify");
+                    if(insertSeccess) {
+                        completion(insertSeccess,image,model,nil);
+                    } else {
+                        NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:@{
+                                                                                        NSLocalizedFailureReasonErrorKey:NSLocalizedString(@"Insert image fail", nil)
+                                                                                        }];
+                        completion(insertSeccess,image,model,error);
+                    }
+                }
+            });
         }
     });
+    
+
 }
 @end
