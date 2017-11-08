@@ -23,6 +23,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    if (@available(iOS 11.0, *)) {
+        self.navigationController.navigationBar.prefersLargeTitles = YES;
+    } else {
+        // Fallback on earlier versions
+        DebugLog(@"iOS < 11");
+    }
+    
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tipLabelDidTap:)];
     [_tipLabel addGestureRecognizer:tapGes];
     _tipLabel.userInteractionEnabled = YES;
@@ -61,6 +68,11 @@
     }
 }
 
+- (IBAction)messageItemAction:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"sms:"] options:@{} completionHandler:^(BOOL success) {
+        
+    }];
+}
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     HRWeakSelf;
