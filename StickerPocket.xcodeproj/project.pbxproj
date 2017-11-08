@@ -166,6 +166,8 @@
 		F8BEF3351FA9B2F400EF218E /* HRMsgStickerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRMsgStickerCollectionViewCell.m; sourceTree = "<group>"; };
 		F8BEF34E1FAB5A7300EF218E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		F8BEF3501FAB5AC100EF218E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		F8BEF3521FB2BE1200EF218E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		F8BEF3541FB2BE1400EF218E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -848,6 +850,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F8BEF2BB1FA9A37D00EF218E /* Base */,
+				F8BEF3521FB2BE1200EF218E /* en */,
+				F8BEF3541FB2BE1400EF218E /* zh-Hans */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";

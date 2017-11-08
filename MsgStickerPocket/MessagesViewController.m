@@ -11,6 +11,7 @@
 #import "SDImageCache+HRExtension.h"
 #import "FMDatabaseQueue+HRExtension.h"
 @interface MessagesViewController () <UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *emptyLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) MSSession *session;
@@ -124,7 +125,9 @@
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.dataArray.count;
+    NSInteger count = self.dataArray.count;
+    _emptyLabel.hidden = count;
+    return count;
 }
 
 - (NSMutableArray *)dataArray {

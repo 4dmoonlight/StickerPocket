@@ -56,11 +56,21 @@
                                     <outlet property="delegate" destination="ObA-dk-sSI" id="8qF-F4-JmI"/>
                                 </connections>
                             </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdi-dK-vIS">
+                                <rect key="frame" x="87.5" y="246" width="145.5" height="36"/>
+                                <string key="text">No Stickers
+Click here to add one</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.34901960780000002" green="0.44705882349999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3Ez-oJ-N6q" firstAttribute="top" secondItem="zMn-AG-sqS" secondAttribute="top" id="6ER-Y9-mks"/>
                             <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="3Ez-oJ-N6q" secondAttribute="trailing" id="JOC-yw-SFG"/>
+                            <constraint firstItem="Fdi-dK-vIS" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="MYF-5a-Kvl"/>
+                            <constraint firstItem="Fdi-dK-vIS" firstAttribute="centerY" secondItem="zMn-AG-sqS" secondAttribute="centerY" id="RxF-aG-mWK"/>
                             <constraint firstItem="3Ez-oJ-N6q" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" id="Wdx-BG-yKe"/>
                             <constraint firstItem="LDy-ih-0nr" firstAttribute="bottom" secondItem="3Ez-oJ-N6q" secondAttribute="bottom" id="esO-3l-jQn"/>
                         </constraints>
@@ -70,6 +80,7 @@
                     <size key="freeformSize" width="320" height="528"/>
                     <connections>
                         <outlet property="collectionView" destination="3Ez-oJ-N6q" id="h4k-sZ-90h"/>
+                        <outlet property="emptyLabel" destination="Fdi-dK-vIS" id="iAk-IS-r7T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
