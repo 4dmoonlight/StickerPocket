@@ -120,6 +120,8 @@
     [self.activeConversation insertMessage:message completionHandler:^(NSError *error){
         if (error != nil) {
             DebugLog(@"%@",error.localizedDescription);
+        } else {
+            [self requestPresentationStyle:MSMessagesAppPresentationStyleCompact];
         }
     }];
 }
