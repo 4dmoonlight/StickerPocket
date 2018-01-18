@@ -6,7 +6,8 @@
 //  Copyright © 2017 Rui Hou. All rights reserved.
 //
 
-#import <SDWebImage/SDImageCache.h>
+//#import <SDWebImage/SDImageCache.h>
+#import "SDImageCache.h"
 #import "HRStickerModel.h"
 @interface SDImageCache (HRExtension)
 + (instancetype)shareGroupInstance;

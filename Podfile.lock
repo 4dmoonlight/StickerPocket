@@ -11,9 +11,6 @@ PODS:
   - Mantle/extobjc (2.1.0)
   - MBProgressHUD (1.0.0)
   - pop (1.0.10)
-  - SDWebImage (4.2.1):
-    - SDWebImage/Core (= 4.2.1)
-  - SDWebImage/Core (4.2.1)
 
 DEPENDENCIES:
   - Colours
@@ -22,7 +19,6 @@ DEPENDENCIES:
   - Mantle
   - MBProgressHUD
   - pop
-  - SDWebImage
 
 SPEC CHECKSUMS:
   Colours: f24220c38f13deac88612667e9b4a7fb96b871d4
@@ -31,8 +27,7 @@ SPEC CHECKSUMS:
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
-  SDWebImage: 1fa4c9edf525b744f002db89f3f5a38b3cd4c541
 
-PODFILE CHECKSUM: c4bc67ec5ae2326b0fb1dea54b2927141b53dd18
+PODFILE CHECKSUM: f9bc598a053dff40a895cb033a204ced108d44f8
 
 COCOAPODS: 1.3.1

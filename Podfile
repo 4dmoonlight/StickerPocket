@@ -7,7 +7,6 @@ target 'StickerPocket' do
 #   use_frameworks!
 
   # Pods for StickerPocket
-  pod 'SDWebImage'
   pod 'DACircularProgress'
   pod 'pop'
   pod 'Colours'
@@ -17,7 +16,6 @@ target 'StickerPocket' do
   target 'MsgStickerPocket' do
       pod 'Mantle'
       pod 'FMDB'
-      pod 'SDWebImage'
       pod 'Colours'
   end
 

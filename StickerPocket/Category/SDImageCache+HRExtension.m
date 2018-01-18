@@ -18,6 +18,7 @@
     dispatch_once(&onceToken, ^{
         NSString *path = [[self class] hr_makeDiskCachePath:@"default"];
         cache = [[SDImageCache alloc] initWithNamespace:@"default" diskCacheDirectory:path];
+        cache.config.shouldDisableiCloud = NO;
     });
     return cache;
 }
