@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  Sticker
+//
+//  Created by Rui Hou on 13/09/2017.
+//  Copyright © 2017 Rui Hou. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "MacroDefinition.h"
+#import "UIView+MJExtension.h"
+#endif /* PrefixHeader_pch */
